@@ -4,7 +4,7 @@ I ended up using VS2019 rather than VScode as a personal preference.
 
 I managed to cover tasks 1, 2, 3 and 4, as well as some refactoring etc in keeping with task 7, but didn't have the time to get to 5 and 6. 
 
-Regarding Task 1, I did actually come up with a solution for replacing the id with the slug completely just to see if it was possible. As expected though, there are a ton of issues with this route. The Id/slug route would obviously be my suggested solution and is generally best practice.
+Regarding Task 1, I did actually come up with a solution for replacing the id with the slug completely just to see if it was possible. As expected though, there are a ton of issues with this solution. The Id/slug routing would obviously be my suggested solution and is generally best practice.
 
 Regarding Task 2, I presume the intention with the background colour would be to store it within the post entity in the database, which is obviously not possible with the dummy data, so I just added a default value after moving the logic into the API.
 
