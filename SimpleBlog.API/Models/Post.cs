@@ -1,5 +1,6 @@
 using System;
 using Newtonsoft.Json;
+using SimpleBlog.API.Infrastructure;
 
 namespace SimpleBlog.API.Models 
 {
@@ -17,10 +18,27 @@ namespace SimpleBlog.API.Models
         [JsonProperty("title")]
         public string Title { get; set; }
 
+        [JsonProperty("slug")]
+        public string Slug { get
+            {
+                return StringHelper.Sluggify(Title);
+            }
+        }
+
         [JsonProperty("body")]
         public string Body { get; set; }
 
         [JsonProperty("image")]
         public string Image => "https://via.placeholder.com/150x150";
+
+        [JsonProperty("colour")]
+        public int Colour
+        {
+            get
+            {
+                //I would presume that in the real world this twould be something fetched from the source
+                    return 100000;
+            }
+        }
     }
 }

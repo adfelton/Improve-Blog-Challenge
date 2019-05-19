@@ -1,7 +1,6 @@
 @model SimpleBlog.FrontEnd.ViewModels.PostsViewModel
 @{
     ViewData["Title"] = "Our Simple Blog Posts";
-    var bgRand = new Random(0);
 }
 
 <h1>Our Posts</h1>
@@ -11,11 +10,14 @@
     {
         <div class="row m1emb">
             <a href="@Url.Action("Details", "Posts", new { id = post.Id })">
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <img src="@post.Image" alt="@post.Title" class="img-responsive" />
                 </div>
-                <div class="col-md-8">
+               
+                <div class="col-md-10">
                     <h3>@post.Title</h3>
+                     <h4>  <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> @post.CommentCount </h4>
+
                 </div>
             </a>
         </div>

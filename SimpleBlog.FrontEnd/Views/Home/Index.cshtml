@@ -1,26 +1,27 @@
-﻿@using SimpleBlog.FrontEnd.Models
+﻿@model SimpleBlog.FrontEnd.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "SimpleBlog Home Page";
-    var bgRand = new Random(0);
 }
 
 <h1>Featured Posts</h1>
 <div id="postsCarousel" class="carousel slide mb-1" data-ride="carousel" data-interval="6000">
-    @if(ViewData["Model.Featured"] != null) 
+    @if (Model.FeaturedPosts != null)
     {
         <ol class="carousel-indicators">
-            @for(int i = 0; i < ((List<Post>)ViewData["Model.Featured"]).Count(); i++) {
+            @for (int i = 0; i < Model.FeaturedPosts.Count(); i++)
+            {
                 <li data-target="#postsCarousel" data-slide-to="@i" class="@(i==0 ? "active" : "")"></li>
             }
         </ol>
         <div class="carousel-inner" role="listbox">
             @{
                 bool first = true;
-                foreach(var post in (List<Post>)ViewData["Model.Featured"]) {
+                foreach (var post in Model.FeaturedPosts)
+                {
                     <div class="item @(first ? "active" : "")">
-                        <a class="btn btn-default" href="@Url.Action("Index", "Posts", new { id = post.Id })">
-                            <img src="https://via.placeholder.com/1920x600/@bgRand.Next(100000, 1000000)/ffffff?text=@post.Title" alt="@post.Title" class="img-responsive" />
-                        </a>            
+                        <a class="btn btn-default" href="@Url.Action("Details", "Posts", new { id = post.Id, slug = post.Slug })">
+                            <img src="https://via.placeholder.com/1920x600/@post.Colour/ffffff?text=@post.Title" alt="@post.Title" class="img-responsive" />
+                        </a>
                     </div>
                     first = false;
                 }
@@ -37,20 +38,18 @@
     </a>
 </div>
 
-@if(ViewData["Model.Boxes"] != null) 
-{
+
     <h2>Not So Featured Posts</h2>
     <div class="row">
-        @foreach(var post in (List<Post>)ViewData["Model.Boxes"])
+        @foreach (var post in Model.Boxes)
         {
             <div class="col-md-4">
-                <a class="btn btn-default" href="@Url.Action("Index", "Posts", new { id = post.Id })">
-                    <img src="https://via.placeholder.com/600x600/@bgRand.Next(100000, 1000000)/ffffff?text=@post.Title" alt="@post.Title" class="img-responsive" />
+                <a class="btn btn-default" href="@Url.Action("Details", "Posts", new {  id = post.Id, slug = post.Slug })">
+                    <img src="https://via.placeholder.com/600x600/@post.Colour/ffffff?text=@post.Title" alt="@post.Title" class="img-responsive" />
                 </a>
             </div>
         }
     </div>
-}
 
 <h2>Would You Like to Read All Our Posts?</h2>
 <div class="row">
@@ -58,5 +57,5 @@
         <a class="btn btn-default" href="@Url.Action("Index", "Posts")">
             <img src="https://via.placeholder.com/1920x100/ff9900/ffffff?text=View All Posts" alt="View All Posts" class="img-responsive" />
         </a>
-    </div>    
+    </div>
 </div>

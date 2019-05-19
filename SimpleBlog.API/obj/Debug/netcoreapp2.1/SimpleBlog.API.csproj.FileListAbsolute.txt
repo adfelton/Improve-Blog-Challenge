@@ -12,3 +12,16 @@ C:\Projects\Recruitment\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcorea
 C:\Projects\Recruitment\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.RazorTargetAssemblyInfo.cache
 C:\Projects\Recruitment\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.dll
 C:\Projects\Recruitment\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.pdb
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\bin\Debug\netcoreapp2.1\SimpleBlog.API.deps.json
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\bin\Debug\netcoreapp2.1\SimpleBlog.API.runtimeconfig.json
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\bin\Debug\netcoreapp2.1\SimpleBlog.API.runtimeconfig.dev.json
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\bin\Debug\netcoreapp2.1\SimpleBlog.API.dll
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\bin\Debug\netcoreapp2.1\SimpleBlog.API.pdb
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.csproj.CoreCompileInputs.cache
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.RazorAssemblyInfo.cache
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.RazorAssemblyInfo.cs
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.AssemblyInfoInputs.cache
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.AssemblyInfo.cs
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.RazorTargetAssemblyInfo.cache
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.dll
+C:\Users\afelt\Improve-Blog-Challenge\SimpleBlog.API\obj\Debug\netcoreapp2.1\SimpleBlog.API.pdb

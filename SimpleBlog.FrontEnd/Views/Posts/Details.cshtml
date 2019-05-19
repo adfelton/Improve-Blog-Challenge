@@ -1,34 +1,36 @@
-@model SimpleBlog.FrontEnd.ViewModels.PostDetailsViewModel
+@model SimpleBlog.FrontEnd.Models.Post
 @{
-    ViewData["Title"] = $"{Model.Post.Title} - Simple Blog";
-    var bgRand = new Random(0);
+    ViewData["Title"] = $"{Model.Title} - Simple Blog";
 }
 
-@if(Model.Post != null) 
+@if(Model != null) 
 {
-    <h1>@Model.Post.Title</h1>
-    
+    <h1>@Model.Title</h1>
     <div class="row mb-1">
         <div class="col-md-12">
-            <h2><img src="https://via.placeholder.com/1920x600/@bgRand.Next(100000, 1000000)/ffffff?text=@Model.Post.Title" alt="@Model.Post.Title" class="img-responsive" /></h2>
+            <h2><img src="https://via.placeholder.com/1920x600/@Model.Colour/ffffff?text=@Model.Title" alt="@Model.Title" class="img-responsive" /></h2>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            @Model.Post.Body
+            @Model.Body
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-12">
-            @Model.Post.Body
+            @Model.Body
         </div>
     </div>
 
     <h2>What people say</h2>
-    foreach(var comment in Model.Comments) 
+    <h4>@Model.Comments.Count() Comments</h4>
+    <hr />
+    if (Model.CommentCount > 0)
     {
+        foreach (var comment in Model.Comments)
+        {
         <div class="row">
             <div class="col-md-1">
                 <img src="@comment.Avatar" alt="@comment.Name" class="img-responsive" />                
@@ -38,6 +40,7 @@
                 <p>@comment.Body</p>
             </div>
         </div>
+        }
     }
 } else {
     <p>Post not found. Sorry.</p>

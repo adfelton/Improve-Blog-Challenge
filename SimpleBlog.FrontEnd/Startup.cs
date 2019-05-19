@@ -32,10 +32,12 @@ namespace SimpleBlog.FrontEnd
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.Configure<AppSettings>(Configuration);
             services.AddTransient<IPostsRepository, PostsRepository>();
             services.AddTransient<ICommentsRepository, CommentsRepository>();
             services.AddHttpClient<IWebClient, WebClient>();
-            
+            services.AddTransient<IBlogService, BlogService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -59,9 +61,14 @@ namespace SimpleBlog.FrontEnd
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "slug",
+                    template: "{controller=Home}/{action=Index}/{id?}/{slug?}");
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
             });
+            
         }
     }
 }

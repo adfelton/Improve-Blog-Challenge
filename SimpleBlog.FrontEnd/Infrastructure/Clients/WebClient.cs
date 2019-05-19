@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Options;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -17,19 +18,23 @@ namespace SimpleBlog.FrontEnd.Infrastructure
         public EnumEntityType EntityType { get; set; }
 
         public readonly HttpClient _httpClient;
-        
+
+        private readonly IOptions<AppSettings> _appSettings;
+
         #endregion
 
         #region "Methods"
 
-        public WebClient(HttpClient httpClient) 
+        public WebClient(HttpClient httpClient, IOptions<AppSettings> appSettings) 
         {
             _httpClient = httpClient;
+            _appSettings = appSettings;
         }
 
         public async Task<string> GetData(string suffix = "") 
         {
-            var address = "https://localhost:5001/" + GetPathFromEntityType() + suffix;
+            var domain = _appSettings.Value.APIUrl;
+            var address =  domain + GetPathFromEntityType() + suffix;
             
             return await _httpClient.GetStringAsync(address);
         }

@@ -21,6 +21,7 @@ namespace SimpleBlog.API.Infrastructure
             return JsonConvert.DeserializeObject<Post>(json);
         }
 
+
         public async Task<IList<Post>> GetN<Post>(int count)
         {
             var posts = await GetAll<Post>();

@@ -6,6 +6,7 @@ using SimpleBlog.API.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace SimpleBlog.API.Tests
 {
@@ -26,8 +27,7 @@ namespace SimpleBlog.API.Tests
 
             //  Assert
             A.CallTo(() => FakePostsRepository.GetN<Post>(100)).MustHaveHappenedOnceExactly();
-            Assert.IsType(typeof(ActionResult<string>), fakeModel);
+            Assert.IsType<ActionResult<string>>(fakeModel);
         }
-
     }
 }
